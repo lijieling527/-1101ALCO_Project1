@@ -50,9 +50,9 @@ R6:
 	ret	
 	
 R21:
-	addi x2, x2, -8	   # 開stack
+	addi x2, x2, -16	   # 開stack
 	sw a0, 0(x2)		# 存a0
-	sw x1, 4(x2)		#存x1
+	sw x1, 8(x2)		#存x1
 	
 	addi a0, a0, -1
 	jal f		#f(x-1)
@@ -65,13 +65,13 @@ R21:
 	lw t1, 0(x2)		#get f(x-1)
 	add a0, a0, t1		#f(x-2) + f(x-1)
 	
-	lw x1, 4(x2)		#要X1
-	addi x2, x2, 8	   #還原stack
+	lw x1, 8(x2)		#要X1
+	addi x2, x2, 16	   #還原stack
 	ret
 R23:
-	addi x2, x2, -8	   # 開stack
+	addi x2, x2, -16	   # 開stack
 	sw a0, 0(x2)		# 存a0
-	sw x1, 4(x2)		#存x1
+	sw x1, 8(x2)		#存x1
 	
 	addi a0, a0, -3
 	jal f		#f(x-3)
@@ -84,13 +84,13 @@ R23:
 	lw t1, 0(x2)		#get f(x-1)
 	add a0, a0, t1		#f(x-2) + f(x-1)
 	
-	lw x1, 4(x2)		#要X1
-	addi x2, x2, 8	 #還原stack
+	lw x1, 8(x2)		#要X1
+	addi x2, x2, 16	 #還原stack
 	ret
 RD5:
-	addi x2, x2, -8		# 開stack
+	addi x2, x2, -16		# 開stack
 	sw a0, 0(x2)		# 存a0
-	sw x1, 4(x2)		#存x1
+	sw x1, 8(x2)		#存x1
 	
 	addi t1, x0, 5
 	div a0, a0, t1		#f(x/5)
@@ -102,8 +102,8 @@ RD5:
 	
 	add a0, a0, t0		#把值給回a0
 	
-	lw ra, 4(x2)		#要X1
-	addi x2, x2,8	   #還原stack
+	lw ra, 8(x2)		#要X1
+	addi x2, x2,16	   #還原stack
 	ret
 
 	
