@@ -1,0 +1,9 @@
+main
+	1.將輸入的值存在a0
+	2.如果a0>=100，結束
+	3.否則進入funtion
+	4.將回來的值用a0輸出
+function
+	f為主要的function，他會判斷要跳到哪一個function:R6是<0，R1=0，R5=1，R21是1 < x <= 10，
+	 R23是10 < x <= 20，RD5是x > 20，一開始會先開stack，存a0、x1，再分別執行內容，最後在load值，並把
+	stack還原。
